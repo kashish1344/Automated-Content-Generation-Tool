@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Content Generation Tool</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .card-text, .form-label, label {
+            color: #343a40;
+        }
+        .content-section {
+            color: #343a40;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-body">
+                <h1 class="card-title text-center">Automated Content Generation Tool</h1>
+                <p class="card-text text-center">Generate high-quality content for blogs, articles, or social media posts based on specific keywords or topics.</p>
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="keywords" class="form-label">Enter keywords or topics:</label>
+                        <input type="text" class="form-control" id="keywords" name="keywords" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tone" class="form-label">Select tone:</label>
+                        <select class="form-control" id="tone" name="tone">
+                            <option value="neutral">Neutral</option>
+                            <option value="formal">Formal</option>
+                            <option value="casual">Casual</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="target_language" class="form-label">Enter target language (e.g., 'es' for Spanish):</label>
+                        <input type="text" class="form-control" id="target_language" name="target_language" value="en">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Generate Content</button>
+                </form>
+            </div>
+        </div>
+
+        {% if generated_content %}
+        <div class="card mt-4 shadow">
+            <div class="card-body content-section">
+                <h2 class="card-title">Generated Content</h2>
+                <div class="card-text">{{ generated_content|safe }}</div>
+            </div>
+        </div>
+
+        <div class="card mt-4 shadow">
+            <div class="card-body content-section">
+                <h2 class="card-title">Content Summary</h2>
+                <div class="card-text">{{ content_summary|safe }}</div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+
+Flask
+langchain-community
+googletrans
+transformers
+markdown
