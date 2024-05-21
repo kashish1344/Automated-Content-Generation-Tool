@@ -3,6 +3,11 @@
 
 This project is a Flask-based web application that generates high-quality content for blogs, articles, or social media posts based on specific keywords. The application includes features like SEO optimization, tone customization, multi-language support, and content summarization.
 
+# Demo Image
+![1715837883799](https://github.com/kashish1344/Automated-Content-Generation-Tool/assets/83247791/6657f106-4b45-42b1-9aea-c73b1c30c6ef)
+
+
+
 ## Features
 
 - **Content Generation:** Generates content based on user-provided keywords using the Ollama Llama2 model.
